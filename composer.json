@@ -1,0 +1,36 @@
+{
+	"name" : "php-platform/session",
+	"type" : "library",
+	"keywords" : [
+		"session",
+		"php session",
+		"collaboration"
+	],
+	"homepage" : "https://github.com/PHPPlatform/session",
+	"authors" : [{
+			"name" : "Raghavendra K R",
+			"email" : "krraghavendra@yahoo.co.in",
+			"homepage" : "http://krraghavendra.in",
+			"role" : "Software Developer"
+		}
+	],
+	"require" : {
+		"php" : ">=5.3",
+		"php-platform/config" : "~0.1",
+		"php-platform/errors" : "~0.1"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "~4.8",
+		"php-platform/mock-config" : "~0.1"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"PhpPlatform\\" : "src/"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"PhpPlatform\\Tests\\" : "tests/"
+		}
+	}
+}
