@@ -1,18 +1,14 @@
-# PHP Platforms RESTFul Apis
-This packages provides platform for writing RESTFul APIs in PHP 
+# PHP Platforms Session Specification
+This packages specifies the session interface and provides a factory to create theh session object  
 
-[![Build Status](https://travis-ci.org/PHPPlatform/restful.svg?branch=master)](https://travis-ci.org/PHPPlatform/restful)
+[![Build Status](https://travis-ci.org/PHPPlatform/session.svg?branch=master)](https://travis-ci.org/PHPPlatform/session)
 
 ## Introduction
-RESTful APIs are modern way of designing an web application , this approach provides the UI Dresigners complete freedom of their design and improvement 
-
-RESTFul APIs also give a way to secure the web resources in more elegant way
-
-This package provides a platform for creating such RESTFul APIs in PHP
-
+Session is required to work with any application, This packages specifies the session 
+ 
 ## Features
-* Annotated APIs 
-* can be used with any frameworks 
+* Implementation of session is left to the implementor
+* Any application which needs session can use this Interface , and in runtime any implementation of session can be used
 
 ### Example
 
