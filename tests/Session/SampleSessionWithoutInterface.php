@@ -24,6 +24,12 @@ class SampleSessionWithoutInterface{
 	}
 	
 	/**
+	 * This method eturns the session id
+	 * @return string , session id
+	 */
+	function getId(){}
+	
+	/**
 	 * Returns the session value stored for this key , null if no value is available for the provided key
 	 * @param $key string in JSON format representing a unque path to a value
 	 *
