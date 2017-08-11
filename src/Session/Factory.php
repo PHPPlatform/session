@@ -6,7 +6,7 @@ use PhpPlatform\Config\Settings;
 use PhpPlatform\Errors\Exceptions\Application\ProgrammingError;
 
 class Factory {
-	private static $session = null;
+	private static $sessionGetInstanceReflectionMethod = null;
 	
 	/**
 	 * This method returns Session singleton object
@@ -14,7 +14,7 @@ class Factory {
 	 * @return Session
 	 */
 	static function getSession(){
-		if(self::$session == null){
+		if(self::$sessionGetInstanceReflectionMethod == null){
 			$sessionImplClassName = Settings::getSettings('php-platform/session',"session.class");
 			try{
 				$sessionImplReflectionClass = new \ReflectionClass($sessionImplClassName);
@@ -26,10 +26,9 @@ class Factory {
 				throw new ProgrammingError("$sessionImplClassName does not implement $sessionInterfaceName");
 			}
 			
-			$sessionGetInstanceReflectionMethod = $sessionImplReflectionClass->getMethod('getInstance');
-			
-			self::$session = $sessionGetInstanceReflectionMethod->invokeArgs(null,array());
+			self::$sessionGetInstanceReflectionMethod = $sessionImplReflectionClass->getMethod('getInstance');
 		}
-		return self::$session;
+		
+		return self::$sessionGetInstanceReflectionMethod->invoke(null);
 	}
 }
